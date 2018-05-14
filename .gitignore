@@ -1,1 +1,9 @@
 .idea
+.settings
+.project
+*.iml
+target
+build.sbt
+project
+derby.log
+metastore_db
