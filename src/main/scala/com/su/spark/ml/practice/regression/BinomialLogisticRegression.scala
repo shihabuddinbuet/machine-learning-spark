@@ -1,9 +1,7 @@
 package com.su.spark.ml.practice.regression
 
 import org.apache.spark.ml.classification.LogisticRegression
-import org.apache.spark.ml.feature.LabeledPoint
 import org.apache.spark.ml.linalg.DenseVector
-import org.apache.spark.ml.param.ParamMap
 import org.apache.spark.sql.types.{DoubleType, StructField, StructType}
 import org.apache.spark.sql.{DataFrame, Row, SparkSession}
 
@@ -42,11 +40,12 @@ object BinomialLogisticRegression {
     val trainDf = trainRDD.toDF("label", "features")
 
     val lr = new LogisticRegression()
-        .setMaxIter(10)
+        .setMaxIter(15)
         .setRegParam(0.3)
         .setElasticNetParam(0.7)
 
     val logisticRegModel = lr.fit(trainDf)
+
 
   }
 }
