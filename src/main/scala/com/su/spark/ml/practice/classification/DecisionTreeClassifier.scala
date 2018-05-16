@@ -103,10 +103,4 @@ object DecisionTreeClassifier {
     model.write.save(path)
   }
 
-  def getPrediction(modelPath: String): Unit = {
-    val model = PipelineModel.load(modelPath)
-  }
-
-
-
 }
