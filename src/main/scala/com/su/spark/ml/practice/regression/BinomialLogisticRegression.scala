@@ -37,15 +37,17 @@ object BinomialLogisticRegression {
     }
 
     import spark.implicits._
-    val trainDf = trainRDD.toDF("label", "features")
+    val Array(trainData, testData) = trainRDD.toDF("label", "features")
+        .randomSplit(Array(0.7, 0.3))
 
     val lr = new LogisticRegression()
         .setMaxIter(15)
         .setRegParam(0.3)
         .setElasticNetParam(0.7)
 
-    val logisticRegModel = lr.fit(trainDf)
-
+    val model = lr.fit(trainData)
+    val prediction = model.transform(testData)
+    prediction.show()
 
   }
 }
