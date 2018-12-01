@@ -2,7 +2,7 @@
 Apache spark is an open source popular big data processing engine.
 It has provided machine learning [library](https://spark.apache.org/docs/latest/ml-guide.html)
 to make machine learning scalable and easy. The aim of the project is
-to show how to use use spark machine learning.
+to show how to use apache spark machine learning library.
 
 ## Getting Started
 If you are new with apache spark, please learn basic about the tool and see
